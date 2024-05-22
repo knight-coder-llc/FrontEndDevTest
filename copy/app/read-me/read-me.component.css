@@ -1,0 +1,36 @@
+.container{
+    margin-top:3em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+main{
+    width:80%;
+    min-width: 350px;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 2em;
+}
+
+.logo{
+    width:340px;
+    height:auto;
+    padding:2em;
+}
+
+.logoContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.methods{
+    display: flex;
+    flex-wrap: wrap;
+}
+.method{
+    width:100%;
+    padding: 2em;
+}
