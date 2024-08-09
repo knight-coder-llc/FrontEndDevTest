@@ -1,0 +1,27 @@
+<h1>Budget Codes</h1>
+<table mat-table [dataSource]="dataSource.data" class="mat-elevation-z8">
+
+  <!-- Column definitions -->
+  <ng-container matColumnDef="budgetCodeId">
+    <th mat-header-cell *matHeaderCellDef>Budget Code Id</th>
+    <td mat-cell *matCellDef="let element"> {{element.budgetCodeId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fiscalYear">
+    <th mat-header-cell *matHeaderCellDef> Fiscal Year </th>
+    <td mat-cell *matCellDef="let element"> {{element.fiscalYear}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="budgetCode">
+    <th mat-header-cell *matHeaderCellDef> Budget Code </th>
+    <td mat-cell *matCellDef="let element"> {{element.budgetCode}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="budgetTitle">
+    <th mat-header-cell *matHeaderCellDef> Budget Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.budgetTitle}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+</table>
