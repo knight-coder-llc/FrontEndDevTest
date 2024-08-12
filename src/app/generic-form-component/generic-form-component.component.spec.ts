@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IdFormComponent } from './id-form.component';
+import { GenericFormComponent } from './generic-form-component.component';
 
-describe('IdFormComponent', () => {
-  let component: IdFormComponent;
-  let fixture: ComponentFixture<IdFormComponent>;
+describe('GenericFormComponentComponent', () => {
+  let component: GenericFormComponent;
+  let fixture: ComponentFixture<GenericFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IdFormComponent]
+      imports: [GenericFormComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(IdFormComponent);
+
+    fixture = TestBed.createComponent(GenericFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

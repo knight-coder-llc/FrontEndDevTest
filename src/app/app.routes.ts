@@ -5,5 +5,7 @@ import { ReadMeComponent } from "./read-me/read-me.component";
 export const routes: Routes = [
   { path: '', component: ReadMeComponent },
   { path: 'budget-codes', component: BudgetCodesComponent },
-  { path: 'budget-codes/:id', component: BudgetCodesComponent },
+  { path: 'budget-codes/id/:id', component: BudgetCodesComponent },
+  { path: 'budget-codes/year/:year', component: BudgetCodesComponent },
+  { path: 'budget-codes/code/:budgetCode', component: BudgetCodesComponent }
 ];

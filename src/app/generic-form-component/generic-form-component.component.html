@@ -1,0 +1,10 @@
+<form [formGroup]="genericForm" (ngSubmit)="onSubmit()" style="margin-top: 25px;margin-left: 25px;">
+  <mat-form-field appearance="fill">
+    <mat-label>{{valueName}}</mat-label>
+    <input matInput formControlName="value" required>
+    <mat-error *ngIf="genericForm.controls['value'].invalid && (genericForm.controls['value'].dirty || genericForm.controls['value'].touched)">
+      {{valueName}} is required.
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

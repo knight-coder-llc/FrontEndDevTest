@@ -3,8 +3,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { IdFormComponent } from "../id-form/id-form.component";
 import { Router } from '@angular/router';
+import {GenericFormComponent} from "../generic-form-component/generic-form-component.component";
 
 @Component({
   selector: 'app-read-me',
@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatCardModule,
     CommonModule,
-    IdFormComponent
+    GenericFormComponent
   ]
 })
 export class ReadMeComponent implements OnInit {
@@ -27,7 +27,15 @@ export class ReadMeComponent implements OnInit {
   }
 
   handleIdSubmit(id: string): void {
-    this.router.navigate([`/budget-codes/${id}`]).then(r => null);
+    this.router.navigate([`/budget-codes/id/${id}`]).then(r => null);
+  }
+
+  handleYear(year: string): void {
+    this.router.navigate([`/budget-codes/year/${year}`]).then(r => null);
+  }
+
+  handleBudget(budgetCode: string): void {
+    this.router.navigate([`/budget-codes/code/${budgetCode}`]).then(r => null);
   }
 
   title="DevTest"

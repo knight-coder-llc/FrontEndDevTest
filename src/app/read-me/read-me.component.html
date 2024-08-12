@@ -160,7 +160,10 @@
                 &#125;
                 </pre>
                     </mat-expansion-panel>
-                  <app-id-form (idSubmit)="handleIdSubmit($event)"></app-id-form>
+                  <app-generic-form
+                    [valueName]="'id'"
+                    (formOutput)="handleIdSubmit($event)"
+                  ></app-generic-form>
                 </div>
                 <div class="method">
                     <mat-expansion-panel>
@@ -254,6 +257,10 @@
                     &#125;
                                 </pre>
                     </mat-expansion-panel>
+                  <app-generic-form
+                    [valueName]="'year'"
+                    (formOutput)="handleYear($event)"
+                  ></app-generic-form>
                 </div>
                 <div class="method">
 
@@ -292,7 +299,10 @@
                         </pre>
 
                     </mat-expansion-panel>
-
+                  <app-generic-form
+                    [valueName]="'budget code'"
+                    (formOutput)="handleBudget($event)"
+                  ></app-generic-form>
                 </div>
                 <div class="method">
                     <!-- ***** Add a budget code ****************************************************-->
