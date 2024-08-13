@@ -348,7 +348,10 @@
                 </pre>
                         <br>
                     </mat-expansion-panel>
-
+                  <app-generic-form
+                    [valueName]="'addCode'"
+                    (formOutput)="handleAddBudgetCode($event)"
+                  ></app-generic-form>
                 </div>
             </div>
 

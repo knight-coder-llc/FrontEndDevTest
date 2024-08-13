@@ -3,7 +3,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 import {GenericFormComponent} from "../generic-form-component/generic-form-component.component";
 
 @Component({
@@ -26,17 +26,24 @@ export class ReadMeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleIdSubmit(id: string): void {
-    this.router.navigate([`/budget-codes/id/${id}`]).then(r => null);
+  handleIdSubmit(id: { value: string }): void {
+    this.router.navigate([`/budget-codes/id/${id.value}`]).then(r => null);
   }
 
-  handleYear(year: string): void {
-    this.router.navigate([`/budget-codes/year/${year}`]).then(r => null);
+  handleYear(year: {value: string}): void {
+    this.router.navigate([`/budget-codes/year/${year.value}`]).then(r => null);
   }
 
-  handleBudget(budgetCode: string): void {
-    this.router.navigate([`/budget-codes/code/${budgetCode}`]).then(r => null);
+  handleBudget(budgetCode: {value: string}): void {
+    this.router.navigate([`/budget-codes/code/${budgetCode.value}`]).then(r => null);
   }
 
+  handleAddBudgetCode(addCode: Object): void {
+    const navigationExtras: NavigationExtras = {
+      state: addCode
+    };
+
+    this.router.navigate([`/budget-codes/add/code`], navigationExtras).then(r => null);
+  }
   title="DevTest"
 }

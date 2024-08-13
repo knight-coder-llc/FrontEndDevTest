@@ -33,11 +33,21 @@ import {NgIf} from "@angular/common";
 export class GenericFormComponent implements OnInit {
   @Input() valueName!: string;
   genericForm: FormGroup;
-  @Output() formOutput = new EventEmitter<string>();
+  @Output() formOutput = new EventEmitter<{
+    value: string;
+    budgetCodeId: string;
+    fiscalYear: string;
+    budgetCode: string;
+    budgetTitle: string;
+  }>();
 
   constructor(private formBuilder: FormBuilder) {
     this.genericForm = this.formBuilder.group({
-      value: ['', Validators.required]
+      value: [''],
+      budgetCodeId: [''],
+      fiscalYear: [''],
+      budgetCode: [''],
+      budgetTitle: ['']
     });
   }
 
@@ -47,7 +57,7 @@ export class GenericFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.genericForm.valid) {
-      const value = this.genericForm.controls['value'].value;
+      const value = this.genericForm.value;
       this.formOutput.emit(value);
     }
   }

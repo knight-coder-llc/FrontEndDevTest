@@ -1,10 +1,33 @@
-<form [formGroup]="genericForm" (ngSubmit)="onSubmit()" style="margin-top: 25px;margin-left: 25px;">
+<form *ngIf="valueName !== 'addCode'; else addCodeForm" [formGroup]="genericForm" (ngSubmit)="onSubmit()" style="margin-top: 25px;margin-left: 25px;">
   <mat-form-field appearance="fill">
     <mat-label>{{valueName}}</mat-label>
-    <input matInput formControlName="value" required>
-    <mat-error *ngIf="genericForm.controls['value'].invalid && (genericForm.controls['value'].dirty || genericForm.controls['value'].touched)">
-      {{valueName}} is required.
-    </mat-error>
+    <input matInput formControlName="value" >
   </mat-form-field>
   <button mat-raised-button color="primary" type="submit">Submit</button>
 </form>
+
+<ng-template #addCodeForm>
+  <form [formGroup]="genericForm" (ngSubmit)="onSubmit()" style="margin-top: 25px;margin-left: 25px;">
+    <mat-form-field appearance="fill">
+      <mat-label>Budget Code ID</mat-label>
+      <input matInput formControlName="budgetCodeId" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fiscal Year</mat-label>
+      <input matInput formControlName="fiscalYear" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Budget Code</mat-label>
+      <input matInput formControlName="budgetCode" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Budget Title</mat-label>
+      <input matInput formControlName="budgetTitle" >
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</ng-template>

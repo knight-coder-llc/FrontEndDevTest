@@ -1,5 +1,15 @@
-<h1>Budget Codes</h1>
-<table mat-table [dataSource]="dataSource.data" class="mat-elevation-z8">
+<div class="header">
+  <button mat-raised-button color="primary" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h1>Budget Codes</h1>
+</div>
+<div *ngIf="isString(dataSource); else tableTemplate">
+  {{dataSource}}
+</div>
+
+<ng-template #tableTemplate>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!-- Column definitions -->
   <ng-container matColumnDef="budgetCodeId">
@@ -25,3 +35,4 @@
   <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
 </table>
+</ng-template>

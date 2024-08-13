@@ -7,5 +7,6 @@ export const routes: Routes = [
   { path: 'budget-codes', component: BudgetCodesComponent },
   { path: 'budget-codes/id/:id', component: BudgetCodesComponent },
   { path: 'budget-codes/year/:year', component: BudgetCodesComponent },
-  { path: 'budget-codes/code/:budgetCode', component: BudgetCodesComponent }
+  { path: 'budget-codes/code/:budgetCode', component: BudgetCodesComponent },
+  { path: 'budget-codes/add/code', component: BudgetCodesComponent }
 ];
